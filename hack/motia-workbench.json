@@ -1,0 +1,101 @@
+[
+  {
+    "id": "hello-world-flow",
+    "config": {
+      "src/hello/process-greeting.step.js": {
+        "x": 409,
+        "y": 44
+      },
+      "src/hello/hello-api.step.js": {
+        "x": 0,
+        "y": 0,
+        "sourceHandlePosition": "right"
+      }
+    }
+  },
+  {
+    "id": "EmployeeFlow",
+    "config": {
+      "steps\\17_sendJoiningLetter.step.js": {
+        "x": -875,
+        "y": 626
+      },
+      "steps\\16_generateCredentials.step.js": {
+        "x": -1424,
+        "y": 635
+      },
+      "steps\\15_receiveKitConfirmation.step.js": {
+        "x": -1835,
+        "y": 601
+      },
+      "steps\\14_sendKitDispatchedEmail.step.js": {
+        "x": -2256,
+        "y": 598
+      },
+      "steps\\13_orderWelcomeKit.step.js": {
+        "x": -734,
+        "y": 417
+      },
+      "steps\\12_receiveDetail.step.js": {
+        "x": -1181,
+        "y": 374
+      },
+      "steps\\11_sendDetailEmail.step.js": {
+        "x": -1739,
+        "y": 391
+      },
+      "steps\\10_b_verificationFailed.step.js": {
+        "x": -1141,
+        "y": 199
+      },
+      "steps\\10_a_verificationPassed.step.js": {
+        "x": -2273,
+        "y": 396
+      },
+      "steps\\09_geminiAPI.step.js": {
+        "x": -1828,
+        "y": 112
+      },
+      "steps\\08_b__sendRetryMail.step.js": {
+        "x": -654,
+        "y": -277
+      },
+      "steps\\08_a_successfullmail.step.js": {
+        "x": -2300,
+        "y": 117
+      },
+      "steps\\07_fetchDriveFile.step.js": {
+        "x": -876,
+        "y": -39
+      },
+      "steps\\06_receiveDocuments.step.js": {
+        "x": -1363,
+        "y": -81
+      },
+      "steps\\05_sendDocumentRequestMail.step.js": {
+        "x": -1845,
+        "y": -78
+      },
+      "steps\\04_b_noStatusMail.step.js": {
+        "x": -829,
+        "y": -469
+      },
+      "steps\\04_a_yesStatusMail.step.js": {
+        "x": -2290,
+        "y": -71
+      },
+      "steps\\03_handleResponse.step.js": {
+        "x": -1222,
+        "y": -354
+      },
+      "steps\\02_sendJoiningMail.step.js": {
+        "x": -1788,
+        "y": -357
+      },
+      "steps\\01_receive.step.js": {
+        "x": -2265,
+        "y": -408
+      }
+    }
+  }
+]
