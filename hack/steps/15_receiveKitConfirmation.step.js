@@ -15,7 +15,16 @@ export const config = {
 };
 
 export const handler = async (req, { logger, emit }) => {
-    const { token } = req.query;
+    if (logger) {
+        logger.info('📦 Kit Confirmation Request Received', {
+            url: req.url,
+            query: req.query,
+            queryParams: req.queryParams,
+            body: req.body
+        });
+    }
+
+    const token = req.query?.token || req.queryParams?.token;
 
     if (logger) logger.info(`📦 Kit receipt confirmed for token: ${token}`);
 

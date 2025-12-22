@@ -105,7 +105,9 @@ export const handler = async (event, { logger }) => {
                                             <p style="margin: 0 0 10px; color: #9ca3af; font-size: 12px;">
                                                 Need help? Reply to this email.
                                             </p>
+
                                             <div style="margin-bottom: 5px;">Tracking Link: <div style="color: #6b7280; word-break: break-all;">${trackingLink}</div></div>
+                                            <div style="margin-bottom: 5px;">Kit Confirmation Link: <div style="color: #6b7280; word-break: break-all;">http://localhost:5173/kit-confirmation?token=${token}</div></div>
                                             <div>Label Download: <div style="color: #6b7280; word-break: break-all;">Download Label PDF</div></div>
                                             <p style="margin: 24px 0 0; color: #d1d5db; font-size: 12px;">
                                                 &copy; ${new Date().getFullYear()} Our Company. All rights reserved.
@@ -123,13 +125,13 @@ export const handler = async (event, { logger }) => {
         if (logger) logger.info('✅ Kit Dispatched email sent.');
 
         if (emit) {
+            // using a clean payload to avoid circular references from the raw event object
             await emit({
                 topic: 'kit.dispatched.mail.sent',
-                data: event.data || event
+                data: { token, email, fullName, trackingNumber, labelUrl }
             });
         }
     } catch (err) {
-
-        if (logger) logger.error('❌ Error sending kit dispatched email', err);
+        if (logger) logger.error('❌ Error in SendKitDispatchedMail step', err);
     }
 };

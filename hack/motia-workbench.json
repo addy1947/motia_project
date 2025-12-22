@@ -17,72 +17,72 @@
     "id": "EmployeeFlow",
     "config": {
       "steps\\17_sendJoiningLetter.step.js": {
-        "x": -875,
-        "y": 626
-      },
-      "steps\\16_generateCredentials.step.js": {
-        "x": -1424,
-        "y": 635
-      },
-      "steps\\15_receiveKitConfirmation.step.js": {
-        "x": -1835,
-        "y": 601
-      },
-      "steps\\14_sendKitDispatchedEmail.step.js": {
-        "x": -2256,
-        "y": 598
-      },
-      "steps\\13_orderWelcomeKit.step.js": {
-        "x": -734,
-        "y": 417
-      },
-      "steps\\12_receiveDetail.step.js": {
-        "x": -1181,
-        "y": 374
-      },
-      "steps\\11_sendDetailEmail.step.js": {
-        "x": -1739,
+        "x": -27,
         "y": 391
       },
+      "steps\\16_generateCredentials.step.js": {
+        "x": -410,
+        "y": 387
+      },
+      "steps\\15_receiveKitConfirmation.step.js": {
+        "x": -841,
+        "y": 360
+      },
+      "steps\\14_sendKitDispatchedEmail.step.js": {
+        "x": -1263,
+        "y": 356
+      },
+      "steps\\13_orderWelcomeKit.step.js": {
+        "x": -1654,
+        "y": 377
+      },
+      "steps\\12_receiveDetail.step.js": {
+        "x": -2221,
+        "y": 340
+      },
+      "steps\\11_sendDetailEmail.step.js": {
+        "x": -12,
+        "y": 48
+      },
       "steps\\10_b_verificationFailed.step.js": {
-        "x": -1141,
-        "y": 199
+        "x": -1089,
+        "y": 87
       },
       "steps\\10_a_verificationPassed.step.js": {
-        "x": -2273,
-        "y": 396
+        "x": -392,
+        "y": -76
       },
       "steps\\09_geminiAPI.step.js": {
-        "x": -1828,
-        "y": 112
+        "x": -785,
+        "y": -90
       },
       "steps\\08_b__sendRetryMail.step.js": {
-        "x": -654,
-        "y": -277
+        "x": -1978,
+        "y": 116
       },
       "steps\\08_a_successfullmail.step.js": {
-        "x": -2300,
-        "y": 117
+        "x": -1367,
+        "y": -94
       },
       "steps\\07_fetchDriveFile.step.js": {
-        "x": -876,
-        "y": -39
+        "x": -1847,
+        "y": -118
       },
       "steps\\06_receiveDocuments.step.js": {
-        "x": -1363,
-        "y": -81
+        "x": -2254,
+        "y": -138
       },
       "steps\\05_sendDocumentRequestMail.step.js": {
-        "x": -1845,
-        "y": -78
+        "x": -65,
+        "y": -326
       },
       "steps\\04_b_noStatusMail.step.js": {
         "x": -829,
         "y": -469
       },
       "steps\\04_a_yesStatusMail.step.js": {
-        "x": -2290,
-        "y": -71
+        "x": -481,
+        "y": -334
       },
       "steps\\03_handleResponse.step.js": {
         "x": -1222,
