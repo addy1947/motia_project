@@ -45,6 +45,8 @@ npm run dev
 
 ## 🔗 Architecture Overview
 
+![Onboarding Workflow](hack/images/onboarding_workflow_chart.png)
+
 1.  **HR Admin** initiates onboarding via the Frontend.
 2.  **Frontend** sends a request to the **Backend**.
 3.  **Backend** triggers a **Motia Workflow** (e.g., Send Offer Letter).
