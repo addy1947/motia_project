@@ -9,6 +9,10 @@ The project is divided into two main components:
 *   **`frontend/`**: The React-based user interface for HR Admins to initiate onboarding and for candidates to complete their details and accept offers.
 *   **`hack/`**: The Motia-powered backend that handles the event-driven workflows, API endpoints, background jobs, and integrations.
 
+
+## 📊 Workflow Diagram
+![Onboarding Workflow](hack/images/onboarding_workflow_chart.png)
+
 ## ✨ Key Features
 
 *   **Automated Workflows**: Seamlessly orchestrates the entire onboarding journey from offer letter to joining day.
@@ -45,7 +49,7 @@ npm run dev
 
 ## 🔗 Architecture Overview
 
-![Onboarding Workflow](hack/images/onboarding_workflow_chart.png)
+
 
 1.  **HR Admin** initiates onboarding via the Frontend.
 2.  **Frontend** sends a request to the **Backend**.
