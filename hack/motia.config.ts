@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import { defineConfig } from '@motiadev/core'
 import endpointPlugin from '@motiadev/plugin-endpoint/plugin'
 import logsPlugin from '@motiadev/plugin-logs/plugin'

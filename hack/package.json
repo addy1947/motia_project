@@ -1,7 +1,8 @@
 {
-  "name": "hack",
+  "name": "motia-onboarding-aditya",
   "description": "",
   "type": "module",
+  "version": "0.0.1",
   "scripts": {
     "postinstall": "motia install",
     "dev": "motia dev",
@@ -22,12 +23,13 @@
     "@motiadev/plugin-logs": "^0.17.9-beta.191",
     "@motiadev/plugin-observability": "^0.17.9-beta.191",
     "@motiadev/plugin-states": "^0.17.9-beta.191",
+    "dotenv": "^17.2.3",
     "google-auth-library": "^10.5.0",
     "googleapis": "^169.0.0",
     "mongoose": "^9.0.2",
     "motia": "^0.17.9-beta.191",
+    "pdf-parse": "^2.4.5",
     "pdf-parser": "^1.0.5",
-    "pdf-to-png-converter": "^3.11.0",
     "resend": "^6.6.0",
     "zod": "^4.1.12"
   },

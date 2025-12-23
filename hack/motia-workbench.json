@@ -45,8 +45,8 @@
         "y": 34
       },
       "steps\\10_b_verificationFailed.step.js": {
-        "x": -1087,
-        "y": 87
+        "x": -1119,
+        "y": 103
       },
       "steps\\10_a_verificationPassed.step.js": {
         "x": -390,
@@ -57,8 +57,8 @@
         "y": -99
       },
       "steps\\08_b__sendRetryMail.step.js": {
-        "x": -1978,
-        "y": 121
+        "x": -1996,
+        "y": 99
       },
       "steps\\08_a_successfullmail.step.js": {
         "x": -1367,
@@ -77,8 +77,8 @@
         "y": -344
       },
       "steps\\04_b_noStatusMail.step.js": {
-        "x": -898,
-        "y": -437
+        "x": -893,
+        "y": -458
       },
       "steps\\04_a_yesStatusMail.step.js": {
         "x": -479,

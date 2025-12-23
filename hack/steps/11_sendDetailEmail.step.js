@@ -16,8 +16,8 @@ export const handler = async (event, { logger, emit }) => {
     if (logger) logger.info(`📧 Sending Details Form Email to ${email}`);
 
     const resend = new Resend(process.env.RESEND_API_KEY);
-
-    const formLink = `http://localhost:5173/submitform/detail?token=${token}`;
+    const frontendUrl = process.env.VITE_FRONTEND_URL || 'http://localhost:5173';
+    const formLink = `${frontendUrl}/submitform/detail?token=${token}`;
 
     try {
         await resend.emails.send({

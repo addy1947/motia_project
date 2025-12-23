@@ -22,7 +22,8 @@ function KitConfirmation() {
         try {
             if (!token) return;
 
-            const response = await fetch(`http://localhost:3000/onboarding/kit-received?token=${token}`, {
+            const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+            const response = await fetch(`${backendUrl}/onboarding/kit-received?token=${token}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'

@@ -1,7 +1,9 @@
 {
-  "name": "Motia Project",
+  "name": "motia-onboarding-aditya",
   "description": "Motia event-driven backend framework project",
-  "rules": ["AGENTS.md"],
+  "rules": [
+    "AGENTS.md"
+  ],
   "context": [
     ".cursor/rules/motia/motia-config.mdc",
     ".cursor/rules/motia/api-steps.mdc",

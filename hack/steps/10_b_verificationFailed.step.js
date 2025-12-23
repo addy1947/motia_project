@@ -28,8 +28,8 @@ export const handler = async (event, { logger, emit }) => {
     } catch (err) { }
 
     const resend = new Resend(process.env.RESEND_API_KEY);
-
-    const uploadLink = `http://localhost:5173/submitform/document?token=${token}`;
+    const frontendUrl = process.env.VITE_FRONTEND_URL || 'http://localhost:5173';
+    const uploadLink = `${frontendUrl}/submitform/document?token=${token}`;
 
     const issues = [];
     if (geminiResult.status === 'FAIL' || geminiResult.status === 'fail') {

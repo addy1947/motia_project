@@ -23,6 +23,7 @@ export const handler = async (event, { logger }) => {
 
     const resend = new Resend(process.env.RESEND_API_KEY);
     const trackingLink = `https://www.ups.com/track?tracknum=${trackingNumber}`;
+    const frontendUrl = process.env.VITE_FRONTEND_URL || 'http://localhost:5173';
 
     try {
         await resend.emails.send({
@@ -92,7 +93,7 @@ export const handler = async (event, { logger }) => {
                                             </div>
 
                                             <div style="text-align: center; margin-top: 16px;">
-                                                <a href="http://localhost:5173/kit-confirmation?token=${token}" style="display: inline-block; background-color: #10b981; color: #ffffff; text-decoration: none; padding: 12px 28px; border-radius: 8px; font-weight: 600; font-size: 14px; box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.4); transition: background-color 0.2s;">
+                                                <a href="${frontendUrl}/kit-confirmation?token=${token}" style="display: inline-block; background-color: #10b981; color: #ffffff; text-decoration: none; padding: 12px 28px; border-radius: 8px; font-weight: 600; font-size: 14px; box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.4); transition: background-color 0.2s;">
                                                     I have received the Kit
                                                 </a>
                                             </div>
@@ -107,7 +108,7 @@ export const handler = async (event, { logger }) => {
                                             </p>
 
                                             <div style="margin-bottom: 5px;">Tracking Link: <div style="color: #6b7280; word-break: break-all;">${trackingLink}</div></div>
-                                            <div style="margin-bottom: 5px;">Kit Confirmation Link: <div style="color: #6b7280; word-break: break-all;">http://localhost:5173/kit-confirmation?token=${token}</div></div>
+                                            <div style="margin-bottom: 5px;">Kit Confirmation Link: <div style="color: #6b7280; word-break: break-all;">${frontendUrl}/kit-confirmation?token=${token}</div></div>
                                             <div>Label Download: <div style="color: #6b7280; word-break: break-all;">Download Label PDF</div></div>
                                             <p style="margin: 24px 0 0; color: #d1d5db; font-size: 12px;">
                                                 &copy; ${new Date().getFullYear()} Our Company. All rights reserved.

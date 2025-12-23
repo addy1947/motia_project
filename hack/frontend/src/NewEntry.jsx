@@ -23,7 +23,8 @@ function NewEntry() {
         setStatus('loading');
 
         try {
-            const response = await fetch(`http://localhost:3000/first`, {
+            const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+            const response = await fetch(`${backendUrl}/first`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

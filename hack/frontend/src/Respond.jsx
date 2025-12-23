@@ -16,7 +16,8 @@ function Respond() {
     const handleConfirm = async () => {
         setStatus('loading');
         try {
-            const response = await fetch(`http://localhost:3000/onboarding/respond`, {
+            const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+            const response = await fetch(`${backendUrl}/onboarding/respond`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

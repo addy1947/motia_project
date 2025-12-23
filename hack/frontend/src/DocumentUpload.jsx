@@ -28,7 +28,8 @@ function DocumentUpload() {
         setStatus('loading');
 
         try {
-            const response = await fetch(`http://localhost:3000/onboarding/documents`, {
+            const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+            const response = await fetch(`${backendUrl}/onboarding/documents`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

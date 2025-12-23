@@ -26,6 +26,7 @@ export const handler = async (event, { logger, emit, state }) => {
     }
 
     const resend = new Resend(process.env.RESEND_API_KEY);
+    const frontendUrl = process.env.VITE_FRONTEND_URL || 'http://localhost:5173';
 
     try {
         const response = await resend.emails.send({
@@ -89,11 +90,11 @@ export const handler = async (event, { logger, emit, state }) => {
                                             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                                                 <tr>
                                                     <td align="center">
-                                                        <a href="http://localhost:5173/respond?token=${token}&action=yes" style="display: inline-block; background-color: #000000; color: #ffffff; text-decoration: none; padding: 14px 32px; border-radius: 9999px; font-weight: 600; font-size: 16px; margin: 0 10px 10px 10px;">
+                                                        <a href="${frontendUrl}/respond?token=${token}&action=yes" style="display: inline-block; background-color: #000000; color: #ffffff; text-decoration: none; padding: 14px 32px; border-radius: 9999px; font-weight: 600; font-size: 16px; margin: 0 10px 10px 10px;">
                                                             Accept Offer
                                                         </a>
                                                         
-                                                        <a href="http://localhost:5173/respond?token=${token}&action=no" style="display: inline-block; background-color: #ffffff; color: #dc2626; text-decoration: none; padding: 13px 31px; border-radius: 9999px; font-weight: 600; font-size: 16px; border: 1px solid #e5e7eb; margin: 0 10px 10px 10px;">
+                                                        <a href="${frontendUrl}/respond?token=${token}&action=no" style="display: inline-block; background-color: #ffffff; color: #dc2626; text-decoration: none; padding: 13px 31px; border-radius: 9999px; font-weight: 600; font-size: 16px; border: 1px solid #e5e7eb; margin: 0 10px 10px 10px;">
                                                             Decline
                                                         </a>
                                                     </td>
@@ -110,8 +111,8 @@ export const handler = async (event, { logger, emit, state }) => {
                                             </p>
                                             <div style="margin-top: 12px; font-size: 10px; color: #d1d5db; word-break: break-all; line-height: 1.4;">
                                                  Direct Links:<br>
-                                                 Accept: http://localhost:5173/respond?token=${token}&action=yes<br>
-                                                 Decline: http://localhost:5173/respond?token=${token}&action=no
+                                                 Accept: ${frontendUrl}/respond?token=${token}&action=yes<br>
+                                                 Decline: ${frontendUrl}/respond?token=${token}&action=no
                                             </div>
                                         </td>
                                     </tr>

@@ -1,5 +1,4 @@
 import { google } from 'googleapis';
-import { pdfToPng } from 'pdf-to-png-converter';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import connectToDatabase from '../lib/db.js';
 import Employee from '../models/Employee.js';
@@ -68,21 +67,13 @@ export const handler = async (event, { logger, emit }) => {
                 }
 
                 if (mimeType === 'application/pdf') {
-                    const pngPages = await pdfToPng(buffer, {
-                        disableFontFace: false,
-                        useSystemFonts: false,
-                        viewportScale: 1.5
+                    imageParts.push({
+                        inlineData: {
+                            data: buffer.toString('base64'),
+                            mimeType: 'application/pdf'
+                        }
                     });
-
-                    for (const page of pngPages) {
-                        imageParts.push({
-                            inlineData: {
-                                data: page.content.toString('base64'),
-                                mimeType: 'image/png'
-                            }
-                        });
-                    }
-                    processedFiles.push(`${name} (converted to ${pngPages.length} images)`);
+                    processedFiles.push(`${name} (as PDF)`);
                 } else if (mimeType.startsWith('image/')) {
                     imageParts.push({
                         inlineData: {
