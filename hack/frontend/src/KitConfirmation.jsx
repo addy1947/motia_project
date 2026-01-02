@@ -50,31 +50,34 @@ function KitConfirmation() {
 
     if (status === 'confirmed') {
         return (
-            <div className="min-h-screen bg-neutral-950 flex flex-col justify-center py-12 sm:px-6 lg:px-8 font-sans selection:bg-emerald-500/30">
-                <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-20 pointer-events-none"></div>
+            <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8 font-sans selection:bg-emerald-500/30">
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+                    <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-purple-200/40 rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-200/40 rounded-full blur-3xl"></div>
+                </div>
                 <motion.div
                     initial="hidden"
                     animate="visible"
                     variants={containerVariants}
                     className="sm:mx-auto sm:w-full sm:max-w-md relative z-10"
                 >
-                    <div className="bg-neutral-900/50 backdrop-blur-xl border border-neutral-800 py-12 px-6 shadow-2xl rounded-2xl sm:px-12 text-center">
+                    <div className="bg-white border border-gray-100 py-12 px-6 shadow-xl rounded-2xl sm:px-12 text-center">
                         <motion.div
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                            className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-8"
+                            className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-emerald-50 border border-emerald-100 mb-8"
                         >
-                            <svg className="h-10 w-10 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg className="h-10 w-10 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                             </svg>
                         </motion.div>
-                        <h2 className="text-3xl font-bold text-white mb-4 tracking-tight">Confirmed!</h2>
-                        <p className="text-neutral-400 text-lg leading-relaxed mb-8">
+                        <h2 className="text-3xl font-bold text-gray-900 mb-4 tracking-tight">Confirmed!</h2>
+                        <p className="text-gray-500 text-lg leading-relaxed mb-8">
                             Great! We've noted that you received your kit. Check your email for your official work credentials.
                         </p>
-                        <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium">
-                            <span className="w-2 h-2 rounded-full bg-emerald-400 mr-2 animate-pulse"></span>
+                        <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-600 text-sm font-medium">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500 mr-2 animate-pulse"></span>
                             Next step initiated
                         </div>
                     </div>
@@ -85,22 +88,25 @@ function KitConfirmation() {
 
     if (status === 'error') {
         return (
-            <div className="min-h-screen bg-neutral-950 flex flex-col justify-center py-12 sm:px-6 lg:px-8 font-sans selection:bg-red-500/30">
-                <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-20 pointer-events-none"></div>
+            <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8 font-sans selection:bg-red-500/30">
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+                    <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-purple-200/40 rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-200/40 rounded-full blur-3xl"></div>
+                </div>
                 <motion.div
                     initial="hidden"
                     animate="visible"
                     variants={containerVariants}
                     className="sm:mx-auto sm:w-full sm:max-w-md relative z-10"
                 >
-                    <div className="bg-neutral-900/50 backdrop-blur-xl border border-neutral-800 py-12 px-6 shadow-2xl rounded-2xl sm:px-12 text-center">
-                        <div className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-red-500/10 border border-red-500/20 mb-8">
+                    <div className="bg-white border border-gray-100 py-12 px-6 shadow-xl rounded-2xl sm:px-12 text-center">
+                        <div className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-red-50 border border-red-100 mb-8">
                             <svg className="h-10 w-10 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                             </svg>
                         </div>
-                        <h2 className="text-2xl font-bold text-white mb-4">Something went wrong</h2>
-                        <p className="text-neutral-400 mb-8">{message}</p>
+                        <h2 className="text-2xl font-bold text-gray-900 mb-4">Something went wrong</h2>
+                        <p className="text-gray-500 mb-8">{message}</p>
                     </div>
                 </motion.div>
             </div>
@@ -108,10 +114,12 @@ function KitConfirmation() {
     }
 
     return (
-        <div className="min-h-screen bg-neutral-950 flex flex-col justify-center py-12 sm:px-6 lg:px-8 font-sans selection:bg-indigo-500/30">
-            {/* Background Effects */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/20 via-neutral-950 to-neutral-950 pointer-events-none"></div>
-            <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-10 pointer-events-none"></div>
+        <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8 font-sans selection:bg-indigo-500/30">
+            {/* Background Effects matching NewEntry.jsx */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+                <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-purple-200/40 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-200/40 rounded-full blur-3xl"></div>
+            </div>
 
             <motion.div
                 initial="hidden"
@@ -124,36 +132,33 @@ function KitConfirmation() {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="inline-block p-4 rounded-2xl bg-gradient-to-br from-neutral-800 to-neutral-900 border border-neutral-700 shadow-xl mb-6"
+                        className="inline-block p-4 rounded-2xl bg-white border border-gray-100 shadow-lg mb-6"
                     >
-                        <svg className="h-12 w-12 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="h-12 w-12 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                         </svg>
                     </motion.div>
-                    <h2 className="text-4xl font-extrabold text-white tracking-tight">Welcome Kit</h2>
-                    <p className="mt-4 text-neutral-400 text-lg">Did you receive your package?</p>
+                    <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">Welcome Kit</h2>
+                    <p className="mt-4 text-gray-500 text-lg">Did you receive your package?</p>
                 </div>
 
-                <div className="bg-neutral-900/50 backdrop-blur-xl border border-neutral-800 py-10 px-6 shadow-2xl rounded-2xl sm:px-12 relative overflow-hidden group">
-                    <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-
+                <div className="bg-white border border-gray-100 py-10 px-6 shadow-xl rounded-2xl sm:px-12 relative overflow-hidden group">
                     <div className="text-center mb-8 relative z-10">
-                        <p className="text-neutral-300 text-lg mb-2 font-medium">
+                        <p className="text-gray-700 text-lg mb-2 font-medium">
                             Please confirm receipt
                         </p>
-                        <p className="text-sm text-neutral-500">
+                        <p className="text-sm text-gray-500">
                             Confirming this helps us initiate your account setup.
                         </p>
                     </div>
 
                     <motion.button
-                        whileHover={{ scale: 1.02, boxShadow: "0 20px 25px -5px rgba(79, 70, 229, 0.4), 0 10px 10px -5px rgba(79, 70, 229, 0.2)" }}
+                        whileHover={{ scale: 1.02, boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)" }}
                         whileTap={{ scale: 0.98 }}
                         onClick={handleConfirm}
-                        className="w-full flex justify-center py-4 px-4 border border-transparent rounded-xl shadow-lg text-base font-semibold text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200 relative overflow-hidden"
+                        className="w-full flex justify-center py-4 px-4 border border-transparent rounded-xl shadow-lg text-base font-semibold text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-all duration-200 relative overflow-hidden"
                     >
                         <span className="relative z-10">Yes, I have received the Kit</span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-violet-600 opacity-0 hover:opacity-100 transition-opacity duration-200"></div>
                     </motion.button>
                 </div>
             </motion.div>
